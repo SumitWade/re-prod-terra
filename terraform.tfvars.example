@@ -1,0 +1,21 @@
+aws_region               = "eu-west-2"
+project_name              = "re-prod"
+environment               = "production"
+vpc_cidr                  = "10.40.0.0/16"
+availability_zones        = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
+jenkins_instance_type     = "t3.large"
+jenkins_volume_size       = 50
+
+# Check AWS EKS supported versions before applying.
+eks_version               = "1.32"
+eks_node_instance_types   = ["t3.large"]
+eks_node_min_size         = 2
+eks_node_desired_size     = 2
+eks_node_max_size         = 4
+
+# Strongly recommended: pin a reviewed AMI ID after checking Canonical SSM parameters.
+jenkins_ami_id = ""
+
+tags = {
+  Owner = "platform"
+}
